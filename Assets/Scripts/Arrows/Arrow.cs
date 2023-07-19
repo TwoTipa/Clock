@@ -6,22 +6,21 @@ namespace Arrows
 {
     public abstract class Arrow : MonoBehaviour
     {
-        protected ClockTime Clock;
+        protected ClockBehavior Clock;
 
         private void Start()
         {
             Clock = FindClock(transform);
-            Debug.Log(Clock.name);
         }
 
-        private ClockTime FindClock(Transform obj)
+        private ClockBehavior FindClock(Transform obj)
         {
             Transform parent = obj.parent;
-            if (!parent.TryGetComponent(typeof(ClockTime), out var ret))
+            if (!parent.TryGetComponent(typeof(ClockBehavior), out var ret))
             {
                 ret = FindClock(parent);
             }
-            return (ClockTime)ret;
+            return (ClockBehavior)ret;
         }
 
         private void Update()

@@ -12,7 +12,14 @@ public class SetAlarmBtn : MonoBehaviour
     public void SwitchMode()
     {
         _isAlarmMode = !_isAlarmMode;
-        OnSwitchClock(new ClockTime());
+        if (_isAlarmMode)
+        {
+            OnSwitchClock(new ClockAlarm());
+        }
+        else
+        {
+            OnSwitchClock(new ClockWatch());
+        }
     }
 
     private static void OnSwitchClock(ClockTime obj)

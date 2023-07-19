@@ -6,7 +6,7 @@ namespace Arrows
     {
         protected override float GetMyPosition()
         {
-            return Clock.CurrentTime.Hours * 6;
+            return -Clock.GetClock().CurrentTime.Hours * 3;
         }
     }
 }
