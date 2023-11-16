@@ -4,9 +4,15 @@ namespace Arrows
 {
     public class HourArrow : Arrow
     {
+        public override float GetScale()
+        {
+            return 360;
+        }
+
         protected override float GetMyPosition()
         {
-            return -Clock.GetClock().CurrentTime.Hours * 3;
+            var time = Clock.GetClock().CurrentTime;
+            return (time.Hours)*30;
         }
     }
 }

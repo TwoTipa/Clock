@@ -15,6 +15,10 @@ namespace Clock
         {
             return this;
         }
+        public virtual ClockTime DeInitialisation()
+        {
+            return this;
+        }
         
         public virtual TimeSpan Tick()
         {

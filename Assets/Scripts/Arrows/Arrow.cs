@@ -8,6 +8,11 @@ namespace Arrows
     {
         protected ClockBehavior Clock;
 
+        public virtual float GetScale()
+        {
+            return 0f;
+        }
+        
         private void Start()
         {
             Clock = FindClock(transform);
